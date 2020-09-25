@@ -7,37 +7,75 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Insure landing page</title>
 
 </head>
 <body>
   <div class="container">
+
     <section class="nav">
-      <img src="images/logo.svg" alt="Insure" class="nav__logo">
-      <nav class="nav__list">
-        <ul class="nav__list__items">
-          <li class="nav__list__item"><a href="#" class="nav__item__link">How we work</a></li>
-          <li class="nav__list__item"><a href="#" class="nav__item__link">Blog</a></li>
-          <li class="nav__list__item"><a href="#" class="nav__item__link">Account</a></li>
-          <li class="nav__list__item nav__list__item--highlight"><a href="#" class="nav__list__item__link">View Plans</a></li>
-        </ul>
-      </nav>
+      <!-- Mobile Navigation -->
+      <div class="nav__mobile">
+        <img src="images/logo.svg" alt="Insure" class="nav__mobile__logo">
+        <nav class="nav__mobile__list">
+          <ul class="nav__mobile__list__items">
+            <li class="nav__mobile__list__items__item">
+              <a href="#" class="nav__mobile__list__items__item__link">How we work</a></li>
+            <li class="nav__mobile__list__items__item">
+              <a href="#" class="nav__mobile__list__items__item__link">Blog</a></li>
+            <li class="nav__mobile__list__items__item">
+              <a href="#" class="nav__mobile__list__items__item__link">Account</a></li>
+            <li class="nav__mobile__list__items__item nav__mobile__list__items__item--highlight">
+              <a href="#" class="nav__list__item__link">View Plans</a></li>
+          </ul>
+        </nav>
+        <img src="images/bg-pattern-mobile-nav.svg" alt="mobile nav pattern" class="nav__mobile__pattern">
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="nav__desktop">
+        <img src="images/logo.svg" alt="Insure" class="nav__desktop__logo">
+        <nav class="nav__desktop__list">
+          <ul class="nav__desktop__list__items">
+            <li class="nav__desktop__list__item">
+              <a href="#" class="nav__desktop__list__item__link">How we work</a></li>
+            <li class="nav__desktop__list__item">
+              <a href="#" class="nav__desktop__list__item__link">Blog</a></li>
+            <li class="nav__desktop__list__item">
+              <a href="#" class="nav__desktop__list__item__link">Account</a></li>
+            <li class="nav__desktop__list__item nav__desktop__list__item--highlight">
+              <a href="#" class="nav__desktop__list__item__link">View Plans</a></li>
+          </ul>
+        </nav>
+      </div>
     </section>
 
     <section class="largehero">
+      <picture class="largehero__pattern__left">
+        <source media="(min-width: 900px)" srcset="images/bg-pattern-intro-left-desktop.svg">
+        <img src="images/bg-pattern-intro-left-mobile.svg" alt="hero pattern" class="">
+      </picture>
+      <picture class="largehero__pattern__right">
+        <source media="(min-width: 900px)" srcset="images/bg-pattern-intro-right-desktop.svg">
+        <img src="images/bg-pattern-intro-right-mobile.svg" alt="hero pattern" class="">
+      </picture>
       <div class="largehero--left">
         <h1 class="largehero__title">Humanizing your insurance.</h1>
         <p class="largehero__description">Get your life insurance coverage easier and faster. We blend our expertise and technology to help you find the plan that’s right for you. Ensure you and your loved ones are protected.</p>
         <span class="largehero__btn"><a href="#" class="btn">View plans</a></span>
       </div>
       <div class="largehero--right">
-        <!-- make image responsive with <picture>? -->
-        <img src="images/image-intro-mobile.jpg" alt="" class="largehero__image">
+          <picture class="largehero__picture">
+            <source media="(min-width: 900px)" srcset="images/image-intro-desktop.jpg">
+            <img src="images/image-intro-mobile.jpg" alt="hero image" class="largehero__image">
+          </picture>
       </div>
     </section>
 
     <section class="main">
+      <span class="main__title--highlight"></span>
       <h2 class="main__title">We’re different</h2>
       <div class="main__highlights">
         <div class="main__highlight">
@@ -61,15 +99,25 @@
     <section class="banner">
       <h3 class="banner__title">Find out more about how we work</h3>
       <span class="banner__btn"><a href="#" class="btn">How we work</a></span>
+      <picture class="banner__pattern">
+        <source media="(min-width: 900px)" srcset="images/bg-pattern-how-we-work-desktop.svg">
+        <img src="images/bg-pattern-how-we-work-mobile.svg" alt="main pattern" class="">
+      </picture>
     </section>
 
     <footer class="footer">
+      <picture class="footer__pattern">
+        <source media="(min-width: 900px)" srcset="images/bg-pattern-footer-desktop.svg">
+        <img src="images/bg-pattern-footer-mobile.svg" alt="footer pattern" class="">
+      </picture>
       <div class="footer__social">
         <img src="images/logo.svg" alt="Insure" class="footer__logo">
-        <img src="images/icon-facebook.svg" alt="" class="footer__sociallink">
-        <img src="images/icon-twitter.svg" alt="" class="footer__sociallink">
-        <img src="images/icon-pinterest.svg" alt="" class="footer__sociallink">
-        <img src="images/icon-instagram.svg" alt="" class="footer__sociallink">
+        <div class="footer__social__links">
+          <img src="images/icon-facebook.svg" alt="" class="footer__sociallink">
+          <img src="images/icon-twitter.svg" alt="" class="footer__sociallink">
+          <img src="images/icon-pinterest.svg" alt="" class="footer__sociallink">
+          <img src="images/icon-instagram.svg" alt="" class="footer__sociallink">
+        </div>
       </div>
 
       <div class="footer__nav">
