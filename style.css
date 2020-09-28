@@ -116,9 +116,6 @@ body {
   padding: 4rem 2rem 1rem 2rem;
   z-index: 100;
 }
-.banner__btn {
-  margin: 0 3rem 3rem 3rem;
-}
 .banner__pattern {
   position: absolute;
   right: 0;
@@ -128,13 +125,52 @@ body {
   text-align: center;
   margin-top: 10rem;
   background-color: hsla(0, 5%, 92%, 0.719);
+  position: relative;
 }
 .footer__pattern {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 .footer__social__links {
   display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.footer__social--highlight {
+  border-top: 1px solid hsl(273, 4%, 51%);
+  width: 70%;
+  display: inline-block;
+}
+.footer__logo {
+  margin: 0 auto;
+  padding-top: 7rem;
+}
+.footer__sociallink:not(:last-child) {
+  padding-right: 1.5rem;
+}
+.footer__nav__column {
+  margin-top: 2.5rem;
+}
+.footer__nav__title {
+  color: hsl(273, 4%, 51%);
+  text-transform: uppercase;
+}
+.footer__nav__items {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.footer__nav__item {
+  text-decoration: none;
+}
+.footer__nav__link {
+  color: hsl(256, 26%, 20%);
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 2rem;
 }
 @media only screen and (min-width: 1000px) {
   .nav .nav__mobile {

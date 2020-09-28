@@ -128,11 +128,13 @@ body {
 .main {
   margin-top: 10vh;
   text-align: center;
+
   &__title {
     font-family: @headings;
     font-size: 3rem;
     font-weight: 200;
     margin-bottom: 5rem;
+
     &--highlight {
       border-top: 1px solid @darkGrayishViolet;
       width: 40%;
@@ -142,6 +144,7 @@ body {
 
   &__highlight {
     &__icon { display: inline-block; }
+
     &__title {
       font-family: @headings;
       font-size: 2rem;
@@ -149,6 +152,7 @@ body {
       margin-top: 1rem;
       margin-bottom: 0;
     }
+
     &__content {
       color: @darkGrayishViolet;
       line-height: 2rem;
@@ -168,6 +172,7 @@ body {
   width: 90%;
   margin: 0 auto;
   padding-bottom: 5rem;
+
   &__title {
     position: relative;
     font-size: 2.3rem;
@@ -177,7 +182,7 @@ body {
     padding: 4rem 2rem 1rem 2rem;
     z-index: 100;
    }
-   &__btn { margin: 0 3rem 3rem 3rem; }
+
    &__pattern {
     position: absolute;
     right: 0;
@@ -192,28 +197,61 @@ body {
   text-align: center;
   margin-top: 10rem;
   background-color: @lightGrayBG;
+  position: relative;
+
   &__pattern { 
-    position: relative; 
-    height: 100%;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
+
   &__social {
     &__links {
       display: flex;
-      
+      justify-content: center;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    &--highlight {
+      border-top: 1px solid @darkGrayishViolet;
+      width: 70%;
+      display: inline-block;
     }
   }
+
   &__logo {
+    margin: 0 auto;
+    padding-top: 7rem;
   }
-  &__sociallink{
-    
-  }
+
+  &__sociallink:not(:last-child){ padding-right: 1.5rem;}
   
   &__nav {
-    &__column{}
-    &__title{}
-    &__items{}
-    &__item{}
-    &__link{}
+    &__column{ margin-top: 2.5rem; }
+
+    &__title{
+      color: @darkGrayishViolet;
+      text-transform: uppercase;
+    }
+
+    &__items{
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    &__item{
+      text-decoration: none;
+    }
+
+    &__link{
+      color: @darkViolet;
+      text-decoration: none;
+      text-transform: uppercase;
+      line-height: 2rem;
+    }
   }
 
 }
