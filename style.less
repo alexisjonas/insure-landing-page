@@ -26,10 +26,10 @@ img {
 }
 
 body {
-    font-size: @fontsize;
-    font-family: @body;
-    margin: 0 auto;
-    padding: 0;
+  font-size: @fontsize;
+  font-family: @body;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .container { width: 100%; }
@@ -54,24 +54,117 @@ body {
 // Mobile nav styles 
 
 .nav {
+  background-color: @veryLightGray;
+
   .nav__desktop { display: none; }
 
-  // .nav__mobile {
-  //   &__logo {}
+  #dropdown { display: none;}
 
-  //   &__list {
-  //     &__items{
-  //       &__item{
-  //         &__link{}
-  //         &--highlight{}
-  //       }
-  //     }
-  //   }
+  .nav__mobile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
-  //   &__pattern {}
+    #menutoggle {
+      display: block;
+      position: relative;
+      z-index: 1;
+      user-select: none;
+      border: 2px solid @darkViolet;
+      padding: 10px;
 
-  // }
+      & input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px; 
+        right: -5px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2; 
 
+      }
+
+      & span {
+        display: block;
+        width: 33px;
+        height: 2px;
+        position: relative;
+        background: @darkViolet;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+      }
+
+      & span:not(:last-child) { margin-bottom: 5px; }
+
+      & span:first-child { transform-origin: 0% 0%; }
+
+      & span:nth-last-child(2) { transform-origin: 0% 100%; }
+
+      & input:checked ~ span {
+        opacity: 1;
+        transform: rotate(-45deg) translate(-2px, -1px);
+        background: @darkViolet;
+      }
+
+      & input:checked ~ span:nth-last-child(2) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+
+      & input:checked ~ span:nth-last-child(3) {
+        transform: rotate(45deg) translate(0, -1px);
+      }
+
+    }
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding-bottom: 40vh;
+      padding-top: 2rem;
+
+      &__items {
+        list-style-type: none;
+        padding: 0;
+
+        &__item {
+          padding: 1rem;
+          text-transform: uppercase;
+
+          &__link{ 
+            text-decoration: none;
+            color: @veryLightGray;
+          }
+
+          &--highlight {
+            border: 2px solid @veryLightGray;
+            padding: .75rem 5rem;
+          }
+        }
+      }
+    }
+
+    &__logo { padding: 2rem; }
+
+    &__logoarea { background-color: @veryLightGray; }
+
+    &__dropdown { 
+      background-color: @darkViolet; 
+      background-image: url(images/bg-pattern-mobile-nav.svg);
+      background-size: 100%;
+      background-position: bottom;
+      background-repeat: no-repeat;
+    }
+
+    // &__pattern {}
+
+  }
 }
 
 
@@ -82,28 +175,33 @@ body {
   flex-direction: column;
   text-align: center;
 
-  &__pattern__left {
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
+  // &__pattern__left {
+  //   position: absolute;
+  //   top: 69%;
+  //   left: 0;
+  // }
 
   &__pattern__right {
     position: absolute;
     right: 0;
-    top: 160%;
+    top: 120%;
   }
 
   &--right { 
-    order: -1; 
-    z-index: 10; 
+    order: -1;
   }
 
   &--left {
     background-color: @darkViolet;
     color: @veryLightGray;
     padding-bottom: 7rem;
+    background-image: url(images/bg-pattern-intro-left-mobile.svg);
+    background-position: top left;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    overflow: visible;
   }
+
   &__title {
     margin-top: 5rem;
     font-family: @headings;
@@ -119,7 +217,6 @@ body {
     text-align: center;
     margin-bottom: 3rem;
   }
-
 
 }
 
@@ -198,6 +295,7 @@ body {
   margin-top: 10rem;
   background-color: @lightGrayBG;
   position: relative;
+  padding-bottom: 5rem;
 
   &__pattern { 
     position: absolute; 
@@ -226,7 +324,7 @@ body {
     padding-top: 7rem;
   }
 
-  &__sociallink:not(:last-child){ padding-right: 1.5rem;}
+  &__sociallink:not(:last-child) { padding-right: 1.5rem;}
   
   &__nav {
     &__column{ margin-top: 2.5rem; }
@@ -242,9 +340,7 @@ body {
       margin-bottom: 0;
     }
 
-    &__item{
-      text-decoration: none;
-    }
+    &__item { text-decoration: none; }
 
     &__link{
       color: @darkViolet;
@@ -265,30 +361,20 @@ body {
     .nav__desktop {
       display: block;
       background-color: red;
-      &__logo {}
+      // &__logo {}
   
-      &__list {
-        &__items{
-          &__item{
-            &__link{}
-            &--highlight{}
-          }
-        }
-      }
+      // &__list {
+      //   &__items{
+      //     &__item{
+      //       &__link{}
+      //       &--highlight{}
+      //     }
+      //   }
+      // }
   
-      &__pattern {}
+      // &__pattern {}
   
     }
   
   }
-  
-
-
-
 }
-
-
-
-
-
-

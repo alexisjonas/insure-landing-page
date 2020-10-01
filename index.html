@@ -16,10 +16,20 @@
   <div class="container">
 
     <section class="nav">
+
       <!-- Mobile Navigation -->
       <div class="nav__mobile">
         <img src="images/logo.svg" alt="Insure" class="nav__mobile__logo">
-        <nav class="nav__mobile__list">
+        <div id="menutoggle">
+          <input id="checkbox" type="checkbox">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="dropdown" class="nav__mobile__dropdown">
+        <nav role="navigation" class="nav__mobile__list">
           <ul class="nav__mobile__list__items">
             <li class="nav__mobile__list__items__item">
               <a href="#" class="nav__mobile__list__items__item__link">How we work</a></li>
@@ -28,10 +38,9 @@
             <li class="nav__mobile__list__items__item">
               <a href="#" class="nav__mobile__list__items__item__link">Account</a></li>
             <li class="nav__mobile__list__items__item nav__mobile__list__items__item--highlight">
-              <a href="#" class="nav__list__item__link">View Plans</a></li>
+              <a href="#" class="nav__mobile__list__items__item__link">View Plans</a></li>
           </ul>
         </nav>
-        <img src="images/bg-pattern-mobile-nav.svg" alt="mobile nav pattern" class="nav__mobile__pattern">
       </div>
 
       <!-- Desktop Navigation -->
@@ -53,10 +62,10 @@
     </section>
 
     <section class="largehero">
-      <picture class="largehero__pattern__left">
+      <!-- <picture class="largehero__pattern__left">
         <source media="(min-width: 900px)" srcset="images/bg-pattern-intro-left-desktop.svg">
         <img src="images/bg-pattern-intro-left-mobile.svg" alt="hero pattern" class="">
-      </picture>
+      </picture> -->
       <picture class="largehero__pattern__right">
         <source media="(min-width: 900px)" srcset="images/bg-pattern-intro-right-desktop.svg">
         <img src="images/bg-pattern-intro-right-mobile.svg" alt="hero pattern" class="">
@@ -159,5 +168,6 @@
       </div>
     </footer>
   </div>
+  <script src="js/app.js"></script>
 </body>
 </html>
