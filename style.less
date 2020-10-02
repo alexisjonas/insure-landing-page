@@ -122,8 +122,6 @@ body {
       background-repeat: no-repeat;
     }
 
-    // &__pattern {}
-
   }
 }
 
@@ -134,17 +132,13 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+  position: relative;
 
-  // &__pattern__left {
-  //   position: absolute;
-  //   top: 69%;
-  //   left: 0;
-  // }
 
   &__pattern__right {
     position: absolute;
     right: 0;
-    top: 120%;
+    bottom: -200px;
   }
 
   &--right { 
@@ -155,11 +149,6 @@ body {
     background-color: @darkViolet;
     color: @veryLightGray;
     padding-bottom: 7rem;
-    background-image: url(images/bg-pattern-intro-left-mobile.svg);
-    background-position: top left;
-    background-size: 40%;
-    background-repeat: no-repeat;
-    overflow: visible;
   }
 
   &__title {
@@ -176,6 +165,12 @@ body {
     padding: 1rem 1rem;
     text-align: center;
     margin-bottom: 3rem;
+  }
+
+  &__picture {
+    img {
+      width: 100%;
+    }
   }
 
 }
@@ -314,27 +309,267 @@ body {
 
 
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 900px) {
+
+  // Desktop nav styles 
+
   .nav {
+    background-color: @veryLightGray;
+
     .nav__mobile { display: none; }
-  
+
+    #menutoggle { display: none; }
+
     .nav__desktop {
-      display: block;
-      background-color: red;
-      // &__logo {}
-  
-      // &__list {
-      //   &__items{
-      //     &__item{
-      //       &__link{}
-      //       &--highlight{}
-      //     }
-      //   }
-      // }
-  
-      // &__pattern {}
-  
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+
+      &__list {
+        text-align: center;
+
+        &__items {
+          display: flex;
+          align-items: center;
+          list-style-type: none;
+          padding: 0;
+        }
+
+        &__item {
+          padding: 1rem;
+          text-transform: uppercase;
+
+          &:not(:last-child) {
+            padding-right: 2rem;
+          }
+
+          &__link { 
+            text-decoration: none;
+            color: @darkViolet;
+          }
+
+          &--highlight {
+            border: 2px solid @darkViolet;
+            padding: .75rem 2rem;
+          }
+        }
+      }
+
+      &__logo { padding: 2rem; }
+
+      &__logoarea { background-color: @veryLightGray; }
+
     }
-  
+  }
+
+
+  // Largehero styles
+
+  .largehero {
+
+    &--left {
+      width: 100%;
+      background-color: @darkViolet;
+      color: @veryLightGray;
+      padding-bottom: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__pattern__left {
+      position: absolute;
+      bottom: -300px;
+      width: 30%;
+    }
+
+    &__title {
+      font-size: 3rem;
+      text-align: left;
+      width: 50%;
+      padding: 0 4rem;
+      margin:  0;
+      margin-top: 1rem;
+      line-height: 3rem;
+
+
+      &--highlight {
+        border-top: 1px solid @veryLightGray;
+        width: 10%;
+        display: inline-block;
+        margin-top: 5rem;
+        margin-left: 10vh;
+      }
+    }
+
+    &__description {
+      padding: 0rem 4rem;
+      text-align: left;
+      font-size: 0.85rem;
+      width: 50%;
+      line-height: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    &__btn { 
+      display: block; 
+      margin-left: 4rem;
+    }
+
+    &--right { 
+      order: 0;
+    }
+
+    &__pattern__right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      width: 30%;
+    }
+
+    &__picture {
+      img {
+        display: block;
+        max-width: 40%;
+        position: absolute;
+        right: 10vw;
+        top: 10vh;
+      }
+    }
+
+  }
+
+
+  // Main section styles
+  .main {
+    margin-top: 10vh;
+    text-align: center;
+
+    &__title {
+      font-family: @headings;
+      font-size: 3rem;
+      font-weight: 200;
+      margin-bottom: 5rem;
+
+      &--highlight {
+        border-top: 1px solid @darkGrayishViolet;
+        width: 40%;
+        display: inline-block;
+      } 
+    }
+
+    &__highlight {
+      &__icon { display: inline-block; }
+
+      &__title {
+        font-family: @headings;
+        font-size: 2rem;
+        font-weight: 200;
+        margin-top: 1rem;
+        margin-bottom: 0;
+      }
+
+      &__content {
+        color: @darkGrayishViolet;
+        line-height: 2rem;
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+
+  //Banner styles - Call to action section 
+
+
+  .banner {
+    background-color: @darkViolet;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+
+    &__title {
+      position: relative;
+      font-size: 2.3rem;
+      font-weight: 200;
+      color: @veryLightGray;
+      font-family: @headings;
+      padding: 4rem 2rem 1rem 2rem;
+      z-index: 100;
+    }
+
+    &__pattern {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+
+  // Footer styles
+
+  .footer {
+    text-align: center;
+    margin-top: 10rem;
+    background-color: @lightGrayBG;
+    position: relative;
+    padding-bottom: 5rem;
+
+    &__pattern { 
+      position: absolute; 
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    &__social {
+      &__links {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      &--highlight {
+        border-top: 1px solid @darkGrayishViolet;
+        width: 70%;
+        display: inline-block;
+      }
+    }
+
+    &__logo {
+      margin: 0 auto;
+      padding-top: 7rem;
+    }
+
+    &__sociallink:not(:last-child) { padding-right: 1.5rem;}
+    
+    &__nav {
+      &__column{ margin-top: 2.5rem; }
+
+      &__title{
+        color: @darkGrayishViolet;
+        text-transform: uppercase;
+      }
+
+      &__items{
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+
+      &__item { text-decoration: none; }
+
+      &__link{
+        color: @darkViolet;
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: 2rem;
+      }
+    }
+
   }
 }
