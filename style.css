@@ -3,7 +3,8 @@
 *::after {
   box-sizing: border-box;
 }
-img {
+img,
+source {
   max-width: 100%;
   display: block;
 }
@@ -125,7 +126,8 @@ body {
   text-align: center;
   margin-bottom: 3rem;
 }
-.largehero__picture img {
+.largehero__picture img,
+.largehero__picture source {
   width: 100%;
 }
 .main {
@@ -330,7 +332,7 @@ body {
   }
   .largehero__picture img {
     display: block;
-    max-width: 30%;
+    max-width: 45%;
     position: absolute;
     right: 10vw;
     top: 10vh;
